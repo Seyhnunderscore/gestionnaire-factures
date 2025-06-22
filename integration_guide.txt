@@ -1,0 +1,49 @@
+Guide d'intégration des fonctionnalités de validation des factures
+
+Ce guide explique comment intégrer les méthodes de validation des factures avec barre de progression dans le fichier principal main.py.
+
+1. Importation du module de validation
+
+Au début du fichier main.py, ajoutez l'importation suivante :
+
+```python
+from invoice_validation import InvoiceValidator
+```
+
+2. Intégration des méthodes dans la classe MainWindow
+
+Dans la classe MainWindow, ajoutez les méthodes suivantes :
+
+```python
+def validate_invoice_row_safe(self, visual_row):
+    """
+    Méthode qui valide une ligne de facture avec une barre de progression détaillée
+    """
+    # Appel à la méthode statique de la classe InvoiceValidator
+    InvoiceValidator.validate_invoice_row_safe(self, visual_row)
+
+def on_validate_button_clicked(self):
+    """
+    Méthode appelée quand un bouton Valider est cliqué - retrouve dynamiquement la ligne
+    """
+    # Appel à la méthode statique de la classe InvoiceValidator
+    InvoiceValidator.on_validate_button_clicked(self)
+```
+
+3. Vérification de l'intégration
+
+Assurez-vous que :
+- La classe MainWindow possède un attribut invoice_table qui est un QTableWidget
+- La méthode update_statistics existe dans la classe MainWindow
+- Les boutons "Valider" dans la colonne 8 du tableau sont correctement connectés à la méthode on_validate_button_clicked
+
+4. Correction de l'erreur de syntaxe
+
+Si vous rencontrez encore des erreurs de syntaxe dans le fichier main.py, vérifiez attentivement les parenthèses fermantes superflues, en particulier dans les méthodes liées à la validation des factures.
+
+5. Test de la fonctionnalité
+
+Après avoir intégré les méthodes, testez la validation des factures en :
+- Cliquant sur un bouton "Valider" dans le tableau des factures
+- Vérifiant que la barre de progression s'affiche avec les différentes étapes
+- Confirmant que la ligne est correctement colorée en bleu et que le bouton change de texte à "Validé"

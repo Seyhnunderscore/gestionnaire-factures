@@ -1,0 +1,20 @@
+{
+    "Client Test 1": {
+        "name": "Client Test 1",
+        "client_code": "CT001",
+        "chorus_code": "CH001",
+        "address": "1 rue du Test, 75000 Paris"
+    },
+    "Client Test 2": {
+        "name": "Client Test 2",
+        "client_code": "CT002",
+        "chorus_code": "CH002",
+        "address": "2 avenue de l'Exemple, 69000 Lyon"
+    },
+    "Client Test 3": {
+        "name": "Client Test 3",
+        "client_code": "CT003",
+        "chorus_code": "CH003",
+        "address": "3 boulevard du Modèle, 33000 Bordeaux"
+    }
+}

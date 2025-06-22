@@ -1,0 +1,9 @@
+@echo off
+echo Installation des dépendances...
+pip install -r requirements.txt
+echo Installation de PyInstaller...
+pip install pyinstaller
+echo Création de l'exécutable...
+pyinstaller --name="Gestionnaire de Factures" --icon=resources/icon.ico --windowed --add-data="assets;assets" --add-data="resources;resources" main.py
+echo Exécutable créé avec succès dans le dossier dist\Gestionnaire de Factures
+pause
